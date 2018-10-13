@@ -1,0 +1,26 @@
+{
+  "name": "react-native-easy-trackingio",
+  "version": "0.0.1",
+  "description": "Tracking.io SDK wrapper for react-native.",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs",
+    "example": "examples"
+  },
+  "scripts": {
+    "dev:android": "react-native run-android",
+    "dev:ios": "react-native run-ios",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/react-native-org/react-native-easy-trackingio.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/react-native-org/react-native-easy-trackingio/issues"
+  },
+  "homepage": "https://github.com/react-native-org/react-native-easy-trackingio#readme"
+}
