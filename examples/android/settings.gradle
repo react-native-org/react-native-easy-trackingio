@@ -1,3 +1,11 @@
 rootProject.name = 'examples'
 
+include ':react-native-easy-trackingio'
+project(':react-native-easy-trackingio').projectDir=new File(rootProject.projectDir, '../../android')
+
+
 include ':app'
+
+
+
+
