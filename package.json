@@ -8,8 +8,6 @@
     "example": "examples"
   },
   "scripts": {
-    "dev:android": "react-native run-android",
-    "dev:ios": "react-native run-ios",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -22,5 +20,8 @@
   "bugs": {
     "url": "https://github.com/react-native-org/react-native-easy-trackingio/issues"
   },
-  "homepage": "https://github.com/react-native-org/react-native-easy-trackingio#readme"
+  "homepage": "https://github.com/react-native-org/react-native-easy-trackingio#readme",
+  "devDependencies": {
+    "@types/react-native": "^0.57.6"
+  }
 }
