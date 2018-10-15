@@ -1,10 +1,11 @@
-apply plugin: 'com.android.application'
+apply plugin: 'com.android.library'
 
 android {
-    compileSdkVersion 23
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    buildToolsVersion rootProject.ext.buildToolsVersion
+
     defaultConfig {
-        applicationId "org.hstar.reactnative.trackingio"
-        minSdkVersion 23
+        minSdkVersion 16
         targetSdkVersion 23
         versionCode 1
         versionName "1.0"
@@ -17,23 +18,7 @@ android {
     }
 }
 
-buildscript {
-  repositories {
-    google()
-    mavenCentral() // or jcenter()
-  }
-  dependencies {
-    classpath 'com.android.tools.build:gradle:3.2.0'
-  }
-}
-
-allprojects {
-  repositories {
-    google() // and here
-    jcenter()
-  }
-
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation 'com.android.support:appcompat-v7:25.3.1'
+    implementation 'com.facebook.react:react-native:+'
+    implementation files('libs/tracking1.3.0.jar')
 }
