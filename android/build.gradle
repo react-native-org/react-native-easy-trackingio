@@ -19,6 +19,6 @@ android {
 }
 
 dependencies {
-    implementation 'com.facebook.react:react-native:+'
-    implementation files('libs/tracking1.3.0.jar')
+    compile 'com.facebook.react:react-native:+'
+    compile files('libs/tracking1.3.0.jar')
 }
