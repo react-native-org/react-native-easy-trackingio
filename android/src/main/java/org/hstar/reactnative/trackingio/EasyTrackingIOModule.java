@@ -1,5 +1,6 @@
 package org.hstar.reactnative.trackingio;
 
+import com.facebook.react.bridge.Promise;
 import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.bridge.ReactContextBaseJavaModule;
 import com.facebook.react.bridge.ReactMethod;
@@ -19,6 +20,37 @@ public class EasyTrackingIOModule extends ReactContextBaseJavaModule {
     @Override
     public String getName() {
         return "EasyTrackingIO";
+    }
+
+
+    /**
+     * Get app ID
+     *
+     * @param promise
+     */
+    @ReactMethod
+    public void getAppId(Promise promise) {
+        promise.resolve(Tracking.getAppId());
+    }
+
+    /**
+     * Get channel ID
+     *
+     * @param promise
+     */
+    @ReactMethod
+    public void getChannelId(Promise promise) {
+        promise.resolve(Tracking.getChannelId());
+    }
+
+    /**
+     * Get device ID
+     *
+     * @param promise
+     */
+    @ReactMethod
+    public void getDeviceId(Promise promise) {
+        promise.resolve(Tracking.getDeviceId());
     }
 
     /**
@@ -60,36 +92,6 @@ public class EasyTrackingIOModule extends ReactContextBaseJavaModule {
     @ReactMethod
     public void setDebugMode(Boolean debugMode) {
         Tracking.setDebugMode(debugMode);
-    }
-
-    /**
-     * Get app ID
-     *
-     * @return
-     */
-    @ReactMethod
-    public String getAppId() {
-        return Tracking.getAppId();
-    }
-
-    /**
-     * Get channel ID
-     *
-     * @return
-     */
-    @ReactMethod
-    public String getChannelId() {
-        return Tracking.getChannelId();
-    }
-
-    /**
-     * Get device ID
-     *
-     * @return
-     */
-    @ReactMethod
-    public String getDeviceId() {
-        return Tracking.getDeviceId();
     }
 
     /**
