@@ -22,7 +22,7 @@ export default class App extends Component {
 
   constructor(props) {
     super(props);
-    EasyTrackingIO.init('289eb2775161a52be342a6abb0e67883');
+    EasyTrackingIO.initAndroid('289eb2775161a52be342a6abb0e67883');
   }
 
   componentDidMount() {

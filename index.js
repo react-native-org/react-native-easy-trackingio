@@ -46,8 +46,8 @@ class EasyTrackingIO {
    * @param {string} appKey SDK的appKey
    * @param {string} channelId App的Channel ID
    */
-  init(appKey, channelId = '_default_') {
-    NativeTrackingIO.init(appKey, channelId);
+  initAndroid(appKey, channelId = '_default_') {
+    NativeTrackingIO.initAndroid(appKey, channelId);
   }
 
   /**

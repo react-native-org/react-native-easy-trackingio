@@ -71,7 +71,7 @@ public class EasyTrackingIOModule extends ReactContextBaseJavaModule {
      * @param channelId The channel id.
      */
     @ReactMethod
-    public void init(String appKey, String channelId) {
+    public void initAndroid(String appKey, String channelId) {
         Tracking.initWithKeyAndChannelId(this.reactContext, appKey, channelId);
     }
 
