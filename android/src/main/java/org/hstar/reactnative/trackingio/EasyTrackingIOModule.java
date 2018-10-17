@@ -6,6 +6,7 @@ import com.facebook.react.bridge.ReactContextBaseJavaModule;
 import com.facebook.react.bridge.ReactMethod;
 import com.reyun.tracking.sdk.Tracking;
 
+import java.nio.channels.spi.AbstractSelectionKey;
 import java.util.Map;
 
 public class EasyTrackingIOModule extends ReactContextBaseJavaModule {
@@ -54,6 +55,16 @@ public class EasyTrackingIOModule extends ReactContextBaseJavaModule {
     }
 
     /**
+     * Get is app on foreground
+     *
+     * @param promise
+     */
+    @ReactMethod
+    public void isAppOnForeground(Promise promise) {
+        promise.resolve(Tracking.isAppOnForeground());
+    }
+
+    /**
      * Init tracking io with app key and channel ID
      *
      * @param appKey    The app key from trackingio central.
@@ -95,6 +106,31 @@ public class EasyTrackingIOModule extends ReactContextBaseJavaModule {
     }
 
     /**
+     * report when payment done.
+     *
+     * @param transactionId
+     * @param paymentType
+     * @param currencyType
+     * @param currencyAmount
+     */
+    @ReactMethod
+    public void reportPayment(String transactionId, String paymentType, String currencyType, float currencyAmount) {
+        Tracking.setPayment(transactionId, paymentType, currencyType, currencyAmount);
+    }
+
+    /**
+     * Report when order done.
+     *
+     * @param transactionId
+     * @param currencyType
+     * @param currencyAmount
+     */
+    @ReactMethod
+    public void reportOrder(String transactionId, String currencyType, float currencyAmount) {
+        Tracking.setOrder(transactionId, currencyType, currencyAmount);
+    }
+
+    /**
      * Report custom event.
      *
      * @param eventName
@@ -103,6 +139,15 @@ public class EasyTrackingIOModule extends ReactContextBaseJavaModule {
     @ReactMethod
     public void reportCustomEvent(String eventName, Map<String, Object> eventData) {
         Tracking.setEvent(eventName, eventData);
+    }
+
+    /**
+     * Report custom event with no event data.
+     *
+     * @param eventName
+     */
+    public void reportCustomEventNoData(String eventName) {
+        Tracking.setEvent(eventName);
     }
 
     /**
