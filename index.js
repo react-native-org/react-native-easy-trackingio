@@ -63,7 +63,7 @@ class EasyTrackingIO {
    * @param {string} userId
    */
   reportUserLogin(userId) {
-    NativeTrackingIO.setLoginSuccessBusiness(userId);
+    NativeTrackingIO.reportUserLogin(userId);
   }
 
   /**
