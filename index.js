@@ -51,6 +51,15 @@ class EasyTrackingIO {
   }
 
   /**
+   * 初始化SDK
+   * @param {string} appKey SDK的appKey
+   * @param {string} channelId App的Channel ID
+   */
+  initIOS(appKey, channelId = '_default_') {
+    NativeTrackingIO.initIOS(appKey, channelId);
+  }
+
+  /**
    * 上报用户注册事件（建议注册成功后上报）
    * @param {string} userId
    */
