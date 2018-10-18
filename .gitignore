@@ -3,3 +3,5 @@ node_modules/
 .project
 .classpath
 .vscode/
+ios/EasyTrackingIO.xcodeproj/xcuserdata/cdecmac00.xcuserdatad/xcschemes/xcschememanagement.plist
+ios/EasyTrackingIO.xcodeproj/xcuserdata/cdecmac03.xcuserdatad/xcschemes/xcschememanagement.plist
