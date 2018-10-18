@@ -1,14 +1,60 @@
-import { NativeModules } from 'react-native';
+# react-native-easy-trackingio
+Tracking.io SDK wrapper for react-native.
 
-const NativeTrackingIO = NativeModules.EasyTrackingIO;
+# How to develop?
 
-class EasyTrackingIO {
-  constructor() {
-    if (!NativeTrackingIO) {
-      console.warn(`NativeTrackingIO is invalid, please load sdk.`);
-    }
-  }
+```bash
+# clone the project
+git clone <repo-url>
 
+# Now, cd examples folder
+cd examples
+
+## install deps
+npm i
+
+## link project(in examples)
+npm link ../
+
+## run demo
+npm run dev:android
+## or
+npm run dev:ios
+```
+
+# Getting started
+
+`$ npm install react-native-easy-trackingio --save`
+
+## IOS
+
+1. In XCode, in the project navigator, right click `Libraries` ➜ `Add Files to [your project's name]`
+2. Go to `node_modules` ➜ `react-native-easy-trackingio` and add `EasyTrackingIO.xcodeproj`
+3. In XCode, in the project navigator, select your project. Add `libEasyTrackingIO.a` to your project's `Build Phases` ➜ `Link Binary With Libraries`
+4. Add `Security.framework`,`CoreTelephony.framework`,`AdSupport.framework`,
+`SystemConfiguration.framework`,`CoreMotion.framework`,`CoreLocation.framework` and `libsqlite3.tbd` to your project's `Build Phases` ➜ `Link Binary With Libraries`
+4. Run your project (`Cmd+R`)
+
+## Android
+
+
+# Usage
+## initialization
+Initialize SDK with `initIOS` or `initAndroid` when the app starts
+
+```javascript
+import EasyTrackingIO from 'react-native-easy-trackingio';
+
+if (Platform.OS === 'ios') {
+  EasyTrackingIO.initIOS('yourIOSAppKey');
+} else {
+  EasyTrackingIO.initAndroid('yourAndroidAppKey');
+}
+```
+
+## APIs
+
+```javascript
   /**
    * 获取AppID
    * @returns Promise<string>
@@ -115,6 +161,4 @@ class EasyTrackingIO {
   dispose() {
     NativeTrackingIO.dispose();
   }
-}
-
-module.exports = new EasyTrackingIO();
+```

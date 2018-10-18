@@ -22,7 +22,11 @@ export default class App extends Component {
 
   constructor(props) {
     super(props);
-    EasyTrackingIO.initAndroid('289eb2775161a52be342a6abb0e67883');
+    if (Platform.OS === 'ios') {
+      EasyTrackingIO.initIOS('49c73d283a888f3ba31703690d570e53');
+    } else {
+      EasyTrackingIO.initAndroid('289eb2775161a52be342a6abb0e67883');
+    }
   }
 
   componentDidMount() {
