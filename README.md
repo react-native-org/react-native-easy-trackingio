@@ -21,3 +21,9 @@ npm run dev:android
 ## or
 npm run dev:ios
 ```
+
+# Notice
+
+**Android Compile**
+
+Ensure `minSdkVersion (lowest possible) <= targetSdkVersion == compileSdkVersion (latest SDK) <= buildToolsVersion (latest)`
